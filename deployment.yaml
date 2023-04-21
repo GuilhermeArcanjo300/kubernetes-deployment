@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: web-basic
-        image: guizerajs/web-basic:1.0.0
+        image: guizerajs/web-basic:2.0.0
         ports:
         - containerPort: 3000
 ---
@@ -26,7 +26,7 @@ spec:
   selector:
     app: web
   ports:
-    - port: 3000
+    - port: 80
       protocol: TCP
-      nodePort: 30000
-  type: NodePort
+      targetPort: 3000
+  type: LoadBalancer

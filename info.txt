@@ -3,3 +3,5 @@ k3d cluster create meucluster -p "80:30000@loadbalancer"
 kubectl apply -f ./deployment.yaml
 
 kubectl get pods
+
+kubectl create secret docker-registry <nome-do-segredo> --docker-server=<registry-server> --docker-username=<registry-username> --docker-password=<registry-password> --docker-email=<email>
